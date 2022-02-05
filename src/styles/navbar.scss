@@ -36,12 +36,14 @@
      margin-left: 30px;
     }
     & ul li{
-      color: white;
+      font-weight: 500;
+      color: rgb(255, 255, 255);
       display: inline-block;
       padding: 0 10px;
+      opacity: 0.8;
     }
     & ul li:hover{
-      color: rgb(180, 59, 59);
+      opacity: 1;
       cursor: pointer;
     }
   }
