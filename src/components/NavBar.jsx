@@ -1,12 +1,25 @@
+import { collection, doc, onSnapshot } from "firebase/firestore";
 import "../styles/navbar.scss";
-import Hero from "./Hero";
+import { useEffect } from "react";
+import React from "react";
 import { Outlet, Link } from "react-router-dom";
+import db from "../firebase";
 
 function NavBar() {
+  useEffect(() => {
+    onSnapshot(collection(db, "events"), (snapshot) => {
+      console.log(
+        snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id, doc: doc }))
+      );
+    });
+  }, []);
   return (
     <div>
       <div className="navbar">
-        <div className="navbar__logo">ZE TICKET</div>
+        <div className="navbar__logo">
+          {" "}
+          <Link to="/">ZEETICKET</Link>
+        </div>
         <div className="navbar__search">
           <form action="">
             <input
@@ -18,17 +31,14 @@ function NavBar() {
         </div>
         <div className="navbar__menu">
           <ul>
-            <li>
-              <a href="/">
-                {" "}
-                <Link to="/">HOME</Link>
-              </a>
-            </li>
+            <li> </li>
             <li>
               {" "}
               <Link to="/events">EVENTOS</Link>
             </li>
-            <li>COMO FUNCIONA</li>
+            <li>
+              <Link to="/creator">CRIE SEU EVENTO</Link>
+            </li>
             <li>CONTATO</li>
           </ul>
         </div>

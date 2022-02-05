@@ -1,0 +1,9 @@
+form div {
+    display: inline-block;
+    min-width: 100px;
+
+    & p{
+        text-align: right;
+        padding-right: 10px;
+    }
+}

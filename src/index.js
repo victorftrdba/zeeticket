@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-
+import Creator from "./components/Creator";
 import NavBar from "./components/NavBar";
 import EventList from "./components/EventList";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter, Routes, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Hero from "./components/Hero";
 
 const rootElement = document.getElementById("root");
@@ -15,6 +15,7 @@ ReactDOM.render(
       <Route path="/" element={<NavBar />}>
         <Route path="/" element={<Hero />}></Route>
         <Route path="events" element={<EventList />}></Route>
+        <Route path="creator" element={<Creator />}></Route>
       </Route>
     </Routes>
   </BrowserRouter>,
