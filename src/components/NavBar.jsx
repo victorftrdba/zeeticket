@@ -3,18 +3,21 @@ import "../styles/navbar.scss";
 import { useEffect } from "react";
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
-import getData from "../firebase";
+import db from "../firebase";
+import { useState } from "react";
 
 function NavBar() {
-  /*   useEffect(() => {
+  const [events, setEvents] = useState("");
+
+  useEffect(() => {
     onSnapshot(collection(db, "events"), (snapshot) => {
-      console.log(
+      setEvents(
         snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id, doc: doc }))
       );
     });
-  }, []); */
+  }, []);
 
-  console.log(getData());
+  console.log(events);
 
   return (
     <div>

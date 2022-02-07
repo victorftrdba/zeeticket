@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { collection, doc, onSnapshot } from "firebase/firestore";
+import { collection, doc, onSnapshot, admin } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDE4iIH0FwkiXS9Yema-nl8ihMg19PWO9Q",
@@ -16,12 +16,4 @@ const app = initializeApp(firebaseConfig);
 
 const db = getFirestore();
 
-const getData = () => {
-  onSnapshot(collection(db, "events"), (snapshot) => {
-    console.log(
-      snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id, doc: doc }))
-    );
-  });
-};
-
-export default getData;
+export default db;

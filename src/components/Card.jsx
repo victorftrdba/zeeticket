@@ -1,12 +1,9 @@
 import React from "react";
-import { useContext } from "react";
-import { DataContext } from "../providers/data";
 
-function Card() {
-  const { form } = React.useContext(DataContext);
+function Card(props) {
   return (
     <li
-      title="video"
+      title="event"
       onClick={(e) => {
         this.getId(e);
         this.onClickVideo();
@@ -18,8 +15,9 @@ function Card() {
       <img src="/" width="100%" height="215" alt="" srcSet="" />
 
       <div className="list__content">
-        <h1>{form.title}</h1>
-        <p>{form.description}</p>
+        <h1>{props.title}</h1>
+        <p>{props.description}</p>
+        <p>{props.user}</p>
       </div>
     </li>
   );
