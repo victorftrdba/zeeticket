@@ -3,16 +3,19 @@ import "../styles/navbar.scss";
 import { useEffect } from "react";
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
-import db from "../firebase";
+import getData from "../firebase";
 
 function NavBar() {
-  useEffect(() => {
+  /*   useEffect(() => {
     onSnapshot(collection(db, "events"), (snapshot) => {
       console.log(
         snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id, doc: doc }))
       );
     });
-  }, []);
+  }, []); */
+
+  console.log(getData());
+
   return (
     <div>
       <div className="navbar">
@@ -31,7 +34,10 @@ function NavBar() {
         </div>
         <div className="navbar__menu">
           <ul>
-            <li> </li>
+            <li>
+              {" "}
+              <Link to="/">HOME</Link>{" "}
+            </li>
             <li>
               {" "}
               <Link to="/events">EVENTOS</Link>

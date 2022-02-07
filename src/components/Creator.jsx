@@ -1,49 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
+import { DataContext } from "../providers/data";
 import "../styles/creator.scss";
 
-class Creator extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { name: "", description: "" };
+const Creator = (props) => {
+  const { form, setForm } = React.useContext(DataContext);
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  console.log(form);
 
-  handleChange(event) {
-    this.setState({ name: event.target.value });
-  }
+  const handleChange = (event) => {
+    setForm({ title: event.target.value, description: event.target.value });
+  };
 
-  handleSubmit(event) {
-    alert("Um nome foi enviado: " + this.state.value);
+  console.log("aqui");
+
+  const handleSubmit = (event) => {
+    alert("Um nome foi enviado: " + form.title);
     event.preventDefault();
-  }
+  };
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        <div>
+          <p>TÍTULO:</p>
+        </div>
+        <input type="text" value={form.title} onChange={handleChange} />
+      </label>
+      <label>
+        <div>
+          <p>DESCRIÇÃO:</p>
+        </div>
+        <input type="text" value={form.description} onChange={handleChange} />
+      </label>
+      <button onSubmit={handleSubmit}>submit</button>
+    </form>
+  );
+};
 
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          <div>
-            <p>TÍTULO:</p>
-          </div>
-          <input
-            type="text"
-            value={this.state.name}
-            onChange={this.handleChange}
-          />
-        </label>
-        <label>
-          <div>
-            <p>DESCRIÇÃO:</p>
-          </div>
-          <input
-            type="text"
-            value={this.state.description}
-            onChange={this.handleChange}
-          />
-        </label>
-      </form>
-    );
-  }
-}
 export default Creator;
