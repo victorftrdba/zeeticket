@@ -1,6 +1,5 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { collection, doc, onSnapshot, admin } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDE4iIH0FwkiXS9Yema-nl8ihMg19PWO9Q",
@@ -11,6 +10,8 @@ const firebaseConfig = {
   appId: "1:862902441897:web:2e3e1c181b4c1e85e1d6b8",
   measurementId: "G-43EFL1WSQ8",
 };
+
+console.log(process.env);
 
 const app = initializeApp(firebaseConfig);
 
