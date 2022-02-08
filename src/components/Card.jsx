@@ -5,7 +5,6 @@ function Card(props) {
   const [state, setState] = useState(null);
   const onClickEvent = () => {
     setState(props.id);
-    console.log(props.id);
   };
   return (
     <div>
@@ -26,7 +25,7 @@ function Card(props) {
           <p>{props.user}</p>
         </div>
       </li>
-      {state ? <Navigate to={`/events/:${props.id}`} /> : ""}
+      {state ? <Navigate to={`/events/${props.id}`} /> : ""}
     </div>
   );
 }

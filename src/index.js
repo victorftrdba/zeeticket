@@ -8,6 +8,7 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Hero from "./components/Hero";
 import { DataProvider } from "./providers/data";
+import EventScreen from "./components/EventScreen";
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
@@ -18,6 +19,7 @@ ReactDOM.render(
           <Route path="/" element={<Hero />}></Route>
           <Route path="events" element={<EventList />}></Route>
           <Route path="creator" element={<Creator />}></Route>
+          <Route path="events/:id" element={<EventScreen />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
