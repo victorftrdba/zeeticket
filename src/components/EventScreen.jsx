@@ -18,7 +18,7 @@ function EventScreen(props) {
   return (
     <div className="event-screen">
       <header className="event-screen__img">
-        <img src="/" alt="img"></img>
+        <img src={arr[index].imagePath} alt="img"></img>
       </header>
       <section className="event-screen__content">
         <h1>{arr[index].title}</h1>

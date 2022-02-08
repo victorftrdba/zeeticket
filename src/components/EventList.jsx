@@ -8,7 +8,12 @@ function EventList(props) {
 
   const arr = data.events.map((doc) => {
     return (
-      <Card title={doc.title} description={doc.description} id={doc.id}></Card>
+      <Card
+        title={doc.title}
+        description={doc.description}
+        id={doc.id}
+        imagePath={doc.imagePath}
+      ></Card>
     );
   });
 
