@@ -45,10 +45,13 @@ function NavBar() {
               {" "}
               <Link to="/events">EVENTOS</Link>
             </li>
-            <li>
-              <Link to="/creator">CRIE SEU EVENTO</Link>
-            </li>
             <li>CONTATO</li>
+            <li>
+              <Link to="/login">LOGIN</Link>
+            </li>
+            <li>
+              <Link to="/signup">REGISTRE-SE</Link>
+            </li>
           </ul>
         </div>
         <div className="navbar__icons">

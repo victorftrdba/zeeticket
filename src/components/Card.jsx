@@ -22,7 +22,6 @@ function Card(props) {
         <div className="list__content">
           <h1>{props.title}</h1>
           <p>{props.description}</p>
-          <p>{props.imagePath}</p>
         </div>
       </li>
       {state ? <Navigate to={`/events/${props.id}`} /> : ""}

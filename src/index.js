@@ -9,6 +9,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Hero from "./components/Hero";
 import { DataProvider } from "./providers/data";
 import EventScreen from "./components/EventScreen";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
+import Panel from "./components/Panel";
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
@@ -19,7 +22,10 @@ ReactDOM.render(
           <Route path="/" element={<Hero />}></Route>
           <Route path="events" element={<EventList />}></Route>
           <Route path="creator" element={<Creator />}></Route>
+          <Route path="signup" element={<Signup />}></Route>
+          <Route path="login" element={<Login />}></Route>
           <Route path="events/:id" element={<EventScreen />}></Route>
+          <Route path="panel/:id" element={<Panel />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
