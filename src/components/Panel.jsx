@@ -8,6 +8,7 @@ import {
   sendEmailVerification,
 } from "firebase/auth";
 import "../styles/panel.scss";
+import { Outlet, Link } from "react-router-dom";
 
 function Panel(props) {
   const auth = getAuth();
@@ -16,7 +17,54 @@ function Panel(props) {
 
   return (
     <div className="panel">
-      <h1>BEM VINDO {auth.currentUser.email}</h1>
+      <div className="panel__menu">
+        <div className="panel__menu__header">
+          <span>bem-vindo, %%USER%%</span>
+        </div>
+        <ul>
+          <li>
+            <Link to="/panel/:id/builder">
+              <span>builder</span>
+            </Link>{" "}
+          </li>
+          <li>
+            <Link to="/panel/:id/profile">
+              <span>profile</span>
+            </Link>{" "}
+          </li>
+          <li>
+            <Link to="/panel/:id/settings">
+              <span>settings</span>
+            </Link>{" "}
+          </li>
+          <li>
+            <Link to="/panel/:id/password">
+              <span>password</span>
+            </Link>{" "}
+          </li>
+          <li>
+            <Link to="/panel/:id/logout">
+              <span>logout</span>
+            </Link>{" "}
+          </li>
+        </ul>
+      </div>
+      <div className="panel__content">
+        CONTENT
+        <Outlet />
+        {/*     <BrowserRouter>
+          <Routes>
+            <Route
+              path="/panel/:id/builder"
+              element={<div>builder</div>}
+            ></Route>
+            <Route
+              path="/panel/:id/profile"
+              element={<div>profile</div>}
+            ></Route>
+          </Routes>
+        </BrowserRouter> */}
+      </div>
     </div>
   );
 }

@@ -1,3 +1,59 @@
-.panel h1{
-    color: white;
+.panel{
+
+    display: flex;
+    flex-direction: row;
+
+    &__menu{
+
+        &__header{
+            padding: 30px;
+           & span{
+          
+           }
+        }
+      
+       flex-grow: 1;
+       
+        background: #6b6b6b;
+        transition: 0.5;
+
+        & ul{
+            padding: 30px;
+         
+            width: 100%;
+            & li{
+
+                &:hover{
+                    background: #4e4e4e;
+                }
+            
+                width: 100%;
+                & a{
+              
+                    width: 100%;
+                    display: flex;
+                    color: #fff;
+    
+                    & span{
+                        padding: 15px;
+                        margin: 0 auto;
+                        font-size: 20px;
+                    }
+                }
+            }   
+        }
+    
+    }
+
+    &__content{
+        flex-grow: 4.5;
+        background: #fff;
+       
+    }
 }
+
+
+
+   
+   
+   

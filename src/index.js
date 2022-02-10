@@ -25,7 +25,25 @@ ReactDOM.render(
           <Route path="signup" element={<Signup />}></Route>
           <Route path="login" element={<Login />}></Route>
           <Route path="events/:id" element={<EventScreen />}></Route>
-          <Route path="panel/:id" element={<Panel />}></Route>
+          <Route path="panel/:id" element={<Panel />}>
+            <Route
+              path="/panel/:id/builder"
+              element={<div>builder</div>}
+            ></Route>
+            <Route
+              path="/panel/:id/profile"
+              element={<div>profile</div>}
+            ></Route>
+            <Route
+              path="/panel/:id/settings"
+              element={<div>settings</div>}
+            ></Route>
+            <Route
+              path="/panel/:id/password"
+              element={<div>password</div>}
+            ></Route>
+            <Route path="/panel/:id/logout" element={<div>logout</div>}></Route>
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
