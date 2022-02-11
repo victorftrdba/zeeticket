@@ -2,8 +2,17 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 20px 0;
+  padding: 10px 0 20px 0;
   position: relative;
+  background-image: linear-gradient(rgb(58, 58, 58), rgb(0, 0, 0));
+  &::after{
+    content: "";
+    background-image: linear-gradient(to right,#42A1EC, #0070C9,  #a31b9c,  #fffb09);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 5px;
+  }
   
  
   
@@ -12,6 +21,11 @@
     flex-grow: 0.5;
     font-size: 50px;
     color: white;
+
+    &::before{
+      content: "";
+      padding-left: 40px;
+    }
   }
 
   &__search{
@@ -25,26 +39,63 @@
         height: 100%;
         padding: 10px 16px;
         border-radius: 50px;
+        
       }
     }
   }
 
   &__menu{
     flex-grow: 1;
+   
     
     & ul{
      margin-left: 30px;
+     float: right;
+
+     &::after{
+      
+        content: "";
+        margin-right: 20px;
+      
+     }
+
     }
     & ul li{
       font-weight: 500;
-      color: rgb(255, 255, 255);
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.671);
       display: inline-block;
-      padding: 0 10px;
-      opacity: 0.8;
+      padding: 5px 12px;
+      opacity: 1;
+  
     }
     & ul li:hover{
-      opacity: 1;
+      color: white;
       cursor: pointer;
+      
+      transition: color 0.5s;
+     
+    }
+    
+    & li:last-child{
+      background-image: linear-gradient(to bottom right,#42A1EC, #0070C9,  #a31b9c,  #fffb09);
+      border-radius: 5px;
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.911);
+      margin-left: 10px;
+      border-radius: 50px;
+      padding:  8px 20px;
+
+      &:hover{
+        transform: scale(1.1);
+       
+        cursor: pointer;
+        
+        transition: all 0.5s;
+       
+      }
+    
+      
     }
   }
 

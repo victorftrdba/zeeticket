@@ -13,38 +13,48 @@ import { Outlet, Link } from "react-router-dom";
 function Panel(props) {
   const auth = getAuth();
   let params = useParams();
-  console.log(auth.currentUser);
+  if (!auth) {
+    console.log("nop");
+  } else {
+    console.log(auth.currentUser.uid);
+  }
+
+  const signOut = () => {
+    auth.signOut().then(() => {
+      console.log("signedout");
+    });
+  };
 
   return (
     <div className="panel">
       <div className="panel__menu">
         <div className="panel__menu__header">
-          <span>bem-vindo, %%USER%%</span>
+          <span>bem-vindo, {auth.currentUser.email}</span>
         </div>
         <ul>
           <li>
-            <Link to="/panel/:id/builder">
-              <span>builder</span>
+            <Link to={`/panel/${auth.currentUser.uid}/profile`}>
+              <span>PROFILE</span>
             </Link>{" "}
           </li>
           <li>
-            <Link to="/panel/:id/profile">
-              <span>profile</span>
+            <Link to={`/panel/${auth.currentUser.uid}/new-event`}>
+              <span>CRIAR EVENTO</span>
             </Link>{" "}
           </li>
           <li>
-            <Link to="/panel/:id/settings">
-              <span>settings</span>
+            <Link to={`/panel/${auth.currentUser.uid}/events`}>
+              <span>MEUS EVENTOS</span>
             </Link>{" "}
           </li>
           <li>
-            <Link to="/panel/:id/password">
-              <span>password</span>
+            <Link to={`/panel/${auth.currentUser.uid}/settings`}>
+              <span>CONFIGURAÇÕES</span>
             </Link>{" "}
           </li>
-          <li>
-            <Link to="/panel/:id/logout">
-              <span>logout</span>
+          <li onClick={signOut}>
+            <Link to={`/`}>
+              <span>LOGOUT</span>
             </Link>{" "}
           </li>
         </ul>

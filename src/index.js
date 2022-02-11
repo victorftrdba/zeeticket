@@ -27,20 +27,20 @@ ReactDOM.render(
           <Route path="events/:id" element={<EventScreen />}></Route>
           <Route path="panel/:id" element={<Panel />}>
             <Route
-              path="/panel/:id/builder"
-              element={<div>builder</div>}
-            ></Route>
-            <Route
               path="/panel/:id/profile"
               element={<div>profile</div>}
             ></Route>
             <Route
-              path="/panel/:id/settings"
-              element={<div>settings</div>}
+              path="/panel/:id/new-event"
+              element={<div>crie seu evento</div>}
             ></Route>
             <Route
-              path="/panel/:id/password"
-              element={<div>password</div>}
+              path="/panel/:id/events"
+              element={<div>meus eventos</div>}
+            ></Route>
+            <Route
+              path="/panel/:id/settings"
+              element={<div>configurações</div>}
             ></Route>
             <Route path="/panel/:id/logout" element={<div>logout</div>}></Route>
           </Route>

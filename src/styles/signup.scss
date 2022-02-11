@@ -1,16 +1,22 @@
 section{
     display: flex;
     justify-content: center;
-   
+
     
 }
 
 .signup-form{
+    position: absolute;
     margin: 80px auto;
     padding: 70px 70px;
     border-radius: 10px;
     background-color: rgb(255, 255, 255);
     min-width: 20%;
+    opacity: 1;
+    transition: opacity 0.3s;
+  
+  
+   
    
 
     &__button{
@@ -28,6 +34,9 @@ section{
     & h1{
         padding-bottom: 20px;
         font-size: 30px;
+       
+
+     
     }
 
     & label{
@@ -38,13 +47,12 @@ section{
             font-size: 15px;
             width: 100%;
             margin: 10px 0;
-            padding: 5px 60px 5px 0px;
-        
-        border: none;
-        border-bottom: 1px solid rgba(207, 217, 222);
+            padding: 5px 60px 5px 5px;
+       
         }
     }
 }
+
 
 form label div {
     display: inline-block;
@@ -57,4 +65,37 @@ form label div {
     }
 
    
+}
+
+.signup-feedback{
+    position: absolute;
+    margin: 80px auto;
+    padding: 70px 70px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    width: 401px;
+  
+
+    & p{
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+  
+}
+
+.close-btn{
+    position: relative;
+    left: 287px;
+    top: -50px;
+    font-size: 23px;
+    cursor: pointer;
+
+    &:hover{
+     width: 20px;
+        
+    }
+
+
 }

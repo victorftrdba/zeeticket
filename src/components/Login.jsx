@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "../styles/signup.scss";
 import db from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
+import { AiFillCloseSquare } from "react-icons/ai";
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -14,6 +15,14 @@ import {
 
 function Login(props) {
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+
+  const closeWindow = () => {
+    console.log((document.querySelector(".signup-form").style.opacity = "0"));
+    setTimeout(() => {
+      navigate("/");
+    }, 50);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -56,6 +65,9 @@ function Login(props) {
     <div>
       <section>
         <form className="signup-form" onSubmit={handleSubmit}>
+          <div className="close-btn" onClick={closeWindow}>
+            <AiFillCloseSquare />
+          </div>
           <h1>Welcome</h1>
 
           <label>

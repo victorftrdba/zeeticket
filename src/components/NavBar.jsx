@@ -39,18 +39,18 @@ function NavBar() {
           <ul>
             <li>
               {" "}
-              <Link to="/">HOME</Link>{" "}
+              <Link to="/">Home</Link>{" "}
             </li>
             <li>
               {" "}
-              <Link to="/events">EVENTOS</Link>
+              <Link to="/events">Eventos</Link>
             </li>
-            <li>CONTATO</li>
+            <li>Contato</li>
             <li>
-              <Link to="/login">LOGIN</Link>
+              <Link to="/login">Login</Link>
             </li>
             <li>
-              <Link to="/signup">REGISTRE-SE</Link>
+              <Link to="/signup">Registre-se</Link>
             </li>
           </ul>
         </div>
