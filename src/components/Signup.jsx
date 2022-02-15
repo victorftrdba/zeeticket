@@ -40,6 +40,13 @@ function Signup(props) {
           setIsFormSended(true);
         });
       })
+      .then(() => {
+        const user = auth.currentUser;
+        addDoc(collection(db, "users"), {
+          name: event.target.elements.name.value,
+          email: event.target.elements.email.value,
+        });
+      })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -48,11 +55,17 @@ function Signup(props) {
       });
   };
 
+  setTimeout(() => {
+    document.querySelector(".signup-form").style.transform = "scale(1, 1)";
+  }, 50);
+
   const closeWindow = () => {
-    console.log((document.querySelector(".signup-form").style.opacity = "0"));
+    console.log(
+      (document.querySelector(".signup-form").style.transform = "scale(0, 0)")
+    );
     setTimeout(() => {
       navigate("/");
-    }, 50);
+    }, 500);
   };
   const form = (
     <form className="signup-form" onSubmit={handleSubmit}>

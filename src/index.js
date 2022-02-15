@@ -12,6 +12,7 @@ import EventScreen from "./components/EventScreen";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Panel from "./components/Panel";
+import UserMenu from "./components/UserMenu";
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
@@ -19,13 +20,13 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<NavBar />}>
-          <Route path="/" element={<Hero />}></Route>
+          <Route path="/:id" element={<Hero />}></Route>
           <Route path="events" element={<EventList />}></Route>
           <Route path="creator" element={<Creator />}></Route>
           <Route path="signup" element={<Signup />}></Route>
           <Route path="login" element={<Login />}></Route>
           <Route path="events/:id" element={<EventScreen />}></Route>
-          <Route path="panel/:id" element={<Panel />}>
+          {/*   <Route path="panel/:id" element={<Panel />}>
             <Route
               path="/panel/:id/profile"
               element={<div>profile</div>}
@@ -43,7 +44,7 @@ ReactDOM.render(
               element={<div>configurações</div>}
             ></Route>
             <Route path="/panel/:id/logout" element={<div>logout</div>}></Route>
-          </Route>
+          </Route> */}
         </Route>
       </Routes>
     </BrowserRouter>

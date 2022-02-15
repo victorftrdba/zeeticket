@@ -1,0 +1,112 @@
+section{
+    display: flex;
+    justify-content: center;
+   
+    
+}
+
+.login-form{
+    position: absolute;
+    margin: 80px auto;
+    padding: 70px 70px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    min-width: 20%;
+  
+    transform: scale(0, 0);
+    transition: transform 0.5s;
+    
+ 
+    
+    
+    
+    &__error{
+       
+        color: red;
+        font-size: 14px;
+        font-weight: 400;
+    }
+  
+   
+   
+
+    &__button{
+        background-color: #101010;
+        color: #ffffff;
+        border-radius: 50px;
+        width: 100%;
+        margin-top: 22px;
+        padding: 10px 40px;
+        text-align: center;
+        
+    }
+    
+
+    & h1{
+        padding-bottom: 20px;
+        font-size: 30px;
+       
+
+     
+    }
+
+    & label{
+
+      
+        
+        & input{
+            font-size: 15px;
+            width: 100%;
+            margin: 10px 0;
+            padding: 5px 60px 5px 5px;
+       
+        }
+    }
+}
+
+
+form label div {
+    display: inline-block;
+    min-width: 200px;
+
+    & p{
+        text-align: right;
+        padding-right: 10px;
+        color: white;
+    }
+
+   
+}
+
+.login-feedback{
+    position: absolute;
+    margin: 80px auto;
+    padding: 70px 70px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    width: 401px;
+  
+
+    & p{
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+  
+}
+
+.close-btn{
+    position: relative;
+    left: 287px;
+    top: -50px;
+    font-size: 23px;
+    cursor: pointer;
+
+    &:hover{
+     width: 20px;
+        
+    }
+
+
+}

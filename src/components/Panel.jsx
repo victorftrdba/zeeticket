@@ -12,12 +12,6 @@ import { Outlet, Link } from "react-router-dom";
 
 function Panel(props) {
   const auth = getAuth();
-  let params = useParams();
-  if (!auth) {
-    console.log("nop");
-  } else {
-    console.log(auth.currentUser.uid);
-  }
 
   const signOut = () => {
     auth.signOut().then(() => {
